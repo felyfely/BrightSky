@@ -13,7 +13,6 @@ struct ForecastView: View {
     
     @ObservedObject var viewModel = WeatherListViewModel()
     
-    @State var coordinate: CLLocationCoordinate2D?
     var body: some View {
         NavigationView{
             if let casts = viewModel.forcasts {
@@ -120,9 +119,7 @@ struct ForecastView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let lat = 37.335046
-        let lon = -122.009007
-        ForecastView(coordinate: CLLocationCoordinate2D.init(latitude: lat, longitude: lon))
+        ForecastView()
     }
 }
 

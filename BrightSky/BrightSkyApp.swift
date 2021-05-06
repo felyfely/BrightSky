@@ -12,7 +12,7 @@ import CoreLocation
 struct BrightSkyApp: App {
     var body: some Scene {
         WindowGroup {
-            ForecastView(coordinate: CLLocationCoordinate2D.init(latitude: 37.335046, longitude: -122.009007))
+            ForecastView()
         }
     }
 }
