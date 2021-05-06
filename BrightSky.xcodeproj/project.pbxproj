@@ -18,6 +18,7 @@
 		5BC404DD264427D600174059 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404DC264427D600174059 /* WeatherListViewModel.swift */; };
 		5BC404E02644440C00174059 /* CastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404DF2644440C00174059 /* CastDetailView.swift */; };
 		5BC404E32644468A00174059 /* DataModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404E22644468A00174059 /* DataModelExtension.swift */; };
+		5BC404E72644593100174059 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404E62644593100174059 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5BC404DC264427D600174059 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		5BC404DF2644440C00174059 /* CastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailView.swift; sourceTree = "<group>"; };
 		5BC404E22644468A00174059 /* DataModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelExtension.swift; sourceTree = "<group>"; };
+		5BC404E62644593100174059 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				5BC404DC264427D600174059 /* WeatherListViewModel.swift */,
 				5BC404CF2643FABE00174059 /* DataModels.swift */,
 				5BC404E22644468A00174059 /* DataModelExtension.swift */,
+				5BC404E62644593100174059 /* LocationManager.swift */,
 				5BC404D92644150500174059 /* NetworkModels.swift */,
 				5BC404D22643FBF000174059 /* Networking.swift */,
 				5BC404D52643FF1B00174059 /* AppEnvironment.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				5BC404E32644468A00174059 /* DataModelExtension.swift in Sources */,
 				5BC404E02644440C00174059 /* CastDetailView.swift in Sources */,
+				5BC404E72644593100174059 /* LocationManager.swift in Sources */,
 				5BC404D62643FF1B00174059 /* AppEnvironment.swift in Sources */,
 				5BC404D02643FABE00174059 /* DataModels.swift in Sources */,
 				5BC404C22643FA2B00174059 /* ForecastView.swift in Sources */,

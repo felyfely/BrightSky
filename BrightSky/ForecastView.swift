@@ -15,9 +15,11 @@ struct ForecastView: View {
     
     @State var coordinate: CLLocationCoordinate2D?
     var body: some View {
-        if let casts = viewModel.forcasts {
-            NavigationView{
+        NavigationView{
+            if let casts = viewModel.forcasts {
+                
                 List {
+                    
                     if let weather = casts.current.weather.first {
                         headerView(weather: weather, temp: Int(casts.current.temp))
                     }
@@ -31,13 +33,13 @@ struct ForecastView: View {
                             }
                         }
                     }
-
+                    
                     Section(header: Text("WEEK").font(.headline)) {
                         ForEach(casts.daily) { cast in
                             ZStack {
                                 dailyCastView(cast: cast)
                                 NavigationLink("", destination: CastDetailView.init(cast: cast)).zIndex(0)
-
+                                
                             }
                         }
                     }
@@ -47,18 +49,29 @@ struct ForecastView: View {
                 .navigationTitle("BRIGHTSKY")
                 .navigationBarItems(trailing: Button.init("Location", action: {
                     // query location
+                    viewModel.queryLocation()
                 }))
-
+                
+            } else {
+                loadingView
+                    .navigationTitle("LOADING...")
+                    .navigationBarItems(trailing: Button.init("Refresh", action: {
+                        // query location
+                        viewModel.queryLocation()
+                    }))
             }
-        } else {
-            loadingView
         }
     }
     
     var loadingView: some View {
-        Text("Loading")
-            .foregroundColor(.secondary)
-            .font(.body)
+        VStack {
+            ProgressView()
+            Text("Loading")
+                .foregroundColor(.secondary)
+                .font(.body)
+        }
+        
+        
     }
     
     func headerView(weather: Weather, temp: Int) -> some View {
