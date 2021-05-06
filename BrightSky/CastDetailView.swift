@@ -10,10 +10,17 @@ import SwiftUI
 struct CastDetailView: View {
     let cast: Daily
     var body: some View {
-        VStack {
-            ForEach(cast.weather) { weather in
-                RemoteImage(url: weather.imageUrl)
-                Text(weather.weatherDescription ?? "")
+        ScrollView {
+            VStack {
+                ForEach(cast.weather) { weather in
+                    Text(cast.dayString).font(.title)
+                    Text(cast.dt, style: .date).font(.footnote)
+                    HStack {
+                        RemoteImage(url: weather.imageUrl)
+                        Text(weather.main ?? "")
+                    }
+                    Text(weather.weatherDescription ?? "")
+                }
             }
         }
     }

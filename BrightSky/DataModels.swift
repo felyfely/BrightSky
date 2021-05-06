@@ -87,7 +87,7 @@ struct Weather: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, main
-        case weatherDescription
+        case weatherDescription = "description"
         case icon
     }
 }

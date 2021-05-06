@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5BC404C02643FA2B00174059 /* BrightSkyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404BF2643FA2B00174059 /* BrightSkyApp.swift */; };
-		5BC404C22643FA2B00174059 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404C12643FA2B00174059 /* ContentView.swift */; };
+		5BC404C22643FA2B00174059 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404C12643FA2B00174059 /* ForecastView.swift */; };
 		5BC404C42643FA2C00174059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC404C32643FA2C00174059 /* Assets.xcassets */; };
 		5BC404C72643FA2D00174059 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC404C62643FA2D00174059 /* Preview Assets.xcassets */; };
 		5BC404D02643FABE00174059 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC404CF2643FABE00174059 /* DataModels.swift */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		5BC404BC2643FA2B00174059 /* BrightSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrightSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC404BF2643FA2B00174059 /* BrightSkyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSkyApp.swift; sourceTree = "<group>"; };
-		5BC404C12643FA2B00174059 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5BC404C12643FA2B00174059 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		5BC404C32643FA2C00174059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BC404C62643FA2D00174059 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BC404C82643FA2D00174059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				5BC404BF2643FA2B00174059 /* BrightSkyApp.swift */,
-				5BC404C12643FA2B00174059 /* ContentView.swift */,
+				5BC404C12643FA2B00174059 /* ForecastView.swift */,
 				5BC404DF2644440C00174059 /* CastDetailView.swift */,
 				5BC404DC264427D600174059 /* WeatherListViewModel.swift */,
 				5BC404CF2643FABE00174059 /* DataModels.swift */,
@@ -163,7 +163,7 @@
 				5BC404E02644440C00174059 /* CastDetailView.swift in Sources */,
 				5BC404D62643FF1B00174059 /* AppEnvironment.swift in Sources */,
 				5BC404D02643FABE00174059 /* DataModels.swift in Sources */,
-				5BC404C22643FA2B00174059 /* ContentView.swift in Sources */,
+				5BC404C22643FA2B00174059 /* ForecastView.swift in Sources */,
 				5BC404DD264427D600174059 /* WeatherListViewModel.swift in Sources */,
 				5BC404C02643FA2B00174059 /* BrightSkyApp.swift in Sources */,
 				5BC404DA2644150500174059 /* NetworkModels.swift in Sources */,

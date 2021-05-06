@@ -17,7 +17,7 @@ struct OneCallRequest: NetworkRequestable {
     var path: String { "onecall"}
     
     var query: [String : String]? {
-        ["lat": lat.description, "lon": lon.description]
+        ["lat": lat.description, "lon": lon.description, "units": "metric"]
     }
     
     typealias Response = Forecasts

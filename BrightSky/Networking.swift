@@ -37,7 +37,7 @@ struct NetworkClient {
         return session.dataTaskPublisher(for: request)
             .tryMap() { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else {
+                      httpResponse.statusCode <= 300 else {
                     throw URLError(.badServerResponse)
                 }
                 return element.data
