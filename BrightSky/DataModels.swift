@@ -27,8 +27,8 @@ struct Daily: Codable {
     let dt: Date
     let sunrise, sunset, moonrise, moonset: Int?
     let moonPhase: Double?
-    let temp: Temp
-    let feelsLike: FeelsLike
+    let temp: Temp?
+    let feelsLike: FeelsLike?
     let pressure, humidity: Int
     let dewPoint, windSpeed: Double
     let windDeg: Int
@@ -53,7 +53,7 @@ struct Daily: Codable {
 
 // MARK: - Current
 struct Current: Codable {
-    let dt: Int
+    let dt: Date
     let sunrise, sunset: Int?
     let temp, feelsLike: Double
     let pressure, humidity: Int
@@ -81,8 +81,8 @@ struct Current: Codable {
 // MARK: - Weather
 struct Weather: Codable {
     let id: Int
-    let main: Main
-    let weatherDescription: Description?
+    let main: String?
+    let weatherDescription: String?
     let icon: String
 
     enum CodingKeys: String, CodingKey {

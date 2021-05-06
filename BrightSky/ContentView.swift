@@ -15,26 +15,51 @@ struct ContentView: View {
     
     @State var coordinate: CLLocationCoordinate2D?
     var body: some View {
-        if let daily = viewModel.forcasts?.daily {
+        if let casts = viewModel.forcasts {
             NavigationView{
                 List {
-                    ForEach(daily) { cast in
-                        HStack {
-                            ForEach(cast.weather) { weather in
-                                RemoteImage(url: weather.imageUrl)
-                            }
-                            
-                            VStack {
-                                Text(cast.dt, style: .date).font(.footnote)
-                                Text(cast.dt, style: .date).font(.footnote)
+                    Section(header: Text("TODAY").font(.headline)) {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                ForEach(casts.hourly) { hourCast in
+                                    VStack {
+                                        Text(hourCast.dt, style: .time)
+                                    }
+                                }
                             }
                         }
                     }
-                }.navigationTitle("Future Week")
+                    
+                    Section(header: Text("THIS WEEK").font(.headline)) {
+                        ForEach(casts.daily) { cast in
+                            ZStack {
+                                HStack {
+                                    ForEach(cast.weather) { weather in
+                                        RemoteImage(url: weather.imageUrl)
+                                    }
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(cast.dayString).font(.headline)
+                                        Text(cast.dt, style: .date).font(.footnote)
+                                    }
+                                }.frame(maxWidth: .infinity, alignment: .leading)
+                                NavigationLink("", destination: CastDetailView.init(cast: cast)).zIndex(0)
+                                
+                            }
+                        }
+                    }
+                }
+                .listStyle(InsetGroupedListStyle())
+                .navigationTitle("BRIGHTSKY")
                 .navigationBarItems(trailing: Button.init("Location", action: {
                     // query location
                 }))
+
             }
+        } else {
+            Text("Loading")
+                .foregroundColor(.secondary)
+                .font(.body)
         }
     }
 }
@@ -46,29 +71,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(coordinate: CLLocationCoordinate2D.init(latitude: lat, longitude: lon))
     }
 }
-
-extension Daily: Identifiable {
-    var id: Double {
-        return dt.timeIntervalSince1970
-    }
-}
-
-extension Daily {
-    var dayString: String {
-        return dt.description
-    }
-    
-    
-}
-
-extension Weather: Identifiable {}
-
-extension Weather {
-    var imageUrl: URL {
-        URL.init(string: OpenWeatherConstants.weatherIconBaseUrl)!.appendingPathComponent("\(self.icon).png")
-    }
-}
-
 
 
 struct RemoteImage: View {
